@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CityMark, ClinicScene } from "@/components/art";
-import { formatVerifiedOn, getPublishedCities } from "@/lib/cities";
+import { formatVerifiedOn, getPublishedCities, pageTitle } from "@/lib/cities";
 
 export default function HomePage() {
   const cities = getPublishedCities();
@@ -23,8 +23,7 @@ export default function HomePage() {
           <Link key={city.slug} href={`/spay-neuter/${city.slug}`}>
             <CityMark slug={city.slug} />
             <span>
-              <h2>{city.city}</h2>
-              <p>{city.programName}</p>
+              <h2>{pageTitle(city)}</h2>
               <p className="meta">{city.region}</p>
             </span>
             <span className="checked">Checked {formatVerifiedOn(city.verifiedOn)}</span>

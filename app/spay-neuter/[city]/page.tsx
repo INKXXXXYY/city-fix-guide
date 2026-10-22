@@ -5,6 +5,7 @@ import {
   formatVerifiedOn,
   getCity,
   getPublishedCities,
+  pageTitle,
   petfinderSrc,
   phoneHref,
 } from "@/lib/cities";
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = getCity(slug);
   if (!city) return { title: "City not found" };
   return {
-    title: `${city.city} spay and neuter help`,
-    description: `${city.programName} from ${city.operator}. Checked ${formatVerifiedOn(city.verifiedOn)}.`,
+    title: pageTitle(city),
+    description: `${pageTitle(city)}. ${city.operator.replace(/\.$/, "")}. Checked ${formatVerifiedOn(city.verifiedOn)}.`,
   };
 }
 
@@ -49,7 +50,7 @@ export default async function CityPage({ params }: PageProps) {
     <main>
       <div className="city-top">
         <div>
-          <h1>{city.city}</h1>
+          <h1>{pageTitle(city)}</h1>
           <p className="region">{city.region}</p>
           <p className="meta">Checked {formatVerifiedOn(city.verifiedOn)}</p>
         </div>

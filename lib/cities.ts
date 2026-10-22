@@ -30,6 +30,11 @@ export function getCity(slug: string): CityProgram | undefined {
   return getPublishedCities().find((city) => city.slug === slug);
 }
 
+export function pageTitle(city: CityProgram): string {
+  if (city.slug === "phoenix") return "Fix Adopt Save voucher in Phoenix";
+  return `${city.programName} in ${city.city}`;
+}
+
 export function formatVerifiedOn(iso: string): string {
   const [year, month, day] = iso.split("-").map(Number);
   return new Date(Date.UTC(year, month - 1, day)).toLocaleDateString("en-US", {
