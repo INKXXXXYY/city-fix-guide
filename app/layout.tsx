@@ -23,6 +23,22 @@ export default function RootLayout({
             <span>Five cities</span>
           </header>
           {children}
+          <footer className="site-links">
+            <p>
+              Related desk:{" "}
+              <a href="https://mail.fxcalc.site/">
+                Can I mail medicine overseas?
+              </a>
+              {" · "}
+              <a href="https://mail.fxcalc.site/mail/melatonin-to-japan/">
+                Melatonin to Japan
+              </a>
+              {" · "}
+              <a href="https://mail.fxcalc.site/mail/melatonin-to-singapore/">
+                Melatonin to Singapore
+              </a>
+            </p>
+          </footer>
         </div>
       </body>
     </html>

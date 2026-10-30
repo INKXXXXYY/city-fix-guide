@@ -190,6 +190,23 @@ h1 {
   font-size: 14px;
 }
 
+.site-links {
+  margin: 0;
+  padding: 14px 28px 24px;
+  border-top: 1px solid color-mix(in srgb, var(--rule) 18%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.site-links p {
+  margin: 0;
+}
+
+.site-links a {
+  color: var(--ink);
+  text-underline-offset: 2px;
+}
+
 .embed {
   width: 100%;
   min-height: 420px;
